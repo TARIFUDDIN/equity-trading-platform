@@ -63,9 +63,6 @@ Real-Time Dashboard (WebSocket + Gradio + Plotly)
 - Sentiment drives 15-20% of trading signal accuracy
 - AI traders use sentiment scores to validate trade entry/exit decisions
 - Reduces false positive trades by ~20%
-
-**Interview talking point:** "I integrated sentiment analysis to give AI agents a human-like understanding of market mood. When news is highly positive about a stock, the sentiment score influences the confidence level of buy decisions."
-
 ---
 
 ### 2. **WebSocket Manager** (`websocket_manager.py`)
@@ -82,9 +79,6 @@ Real-Time Dashboard (WebSocket + Gradio + Plotly)
 - Professional trading platforms require sub-200ms latency for updates
 - HTTP polling would require refreshing every 1-2 seconds (poor UX + inefficient)
 - WebSocket achieves <200ms latency with 40% fewer API calls
-
-**Interview talking point:** "WebSockets enable true real-time updates. When Warren executes a trade, all connected dashboards update instantly without page refresh. This is the same technology used by Bloomberg terminals and professional trading platforms."
-
 ---
 
 ### 3. **Risk Management System** (`risk_management.py`)
@@ -117,9 +111,6 @@ async def assess_portfolio_risk(account):
 - Prevents catastrophic losses through automated threshold monitoring
 - 30% reduction in maximum drawdown during backtests
 - Provides institutional-grade risk controls typical of hedge funds
-
-**Interview talking point:** "Risk management is what separates profitable traders from bankrupt ones. I implemented multiple overlapping risk controls so if one metric gets hit, the system still has safeguards. This is how real trading firms operate."
-
 ---
 
 ### 4. **Intelligent Caching System** (`cache.py`)
@@ -140,9 +131,6 @@ async def assess_portfolio_risk(account):
 - Stock APIs have strict rate limits and monthly quotas
 - Each trader requests similar data simultaneously - caching prevents duplicate calls
 - Market data doesn't change every millisecond - intelligent TTL balances freshness vs efficiency
-
-**Interview talking point:** "Caching is a critical performance optimization. Without it, our API costs would be 2.5x higher and we'd hit rate limits. This teaches me to think about data freshness requirements - not everything needs to be real-time."
-
 ---
 
 ## Advanced Features
