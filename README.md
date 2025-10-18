@@ -215,23 +215,6 @@ The Gradio web interface provides:
 - **Polygon.io** - Professional market data
 - **Asyncio** - Concurrent multi-agent execution
 
-## Interview Q&A
-
-### "How does the system scale?"
-The async architecture allows easy scaling from 4 to 10+ concurrent traders without blocking. To scale further, I'd implement microservices with message queues (Redis) and separate database replicas.
-
-### "What's your biggest technical challenge?"
-Coordinating real-time data between multiple AI agents while maintaining system performance. I solved it with event-driven architecture, WebSocket broadcasting, and intelligent caching with fallback systems.
-
-### "How do you ensure data consistency?"
-Centralized account management with atomic database transactions. All trades go through a single point of truth, and caches invalidate immediately after state changes.
-
-### "Why WebSocket instead of polling?"
-WebSocket achieves <200ms latency with 60% fewer API calls. Professional traders need instant updates - polling every 1-2 seconds would be unacceptable UX.
-
-### "How would you monetize this?"
-SaaS subscriptions (basic/pro/enterprise tiers), API access for developers, white-label licensing for fintech companies, and premium features like real-time sentiment analysis.
-
 ## Performance Optimizations
 
 1. **Caching Strategy** - Reduces API calls by 40%
