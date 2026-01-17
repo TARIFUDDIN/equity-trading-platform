@@ -42,6 +42,7 @@ Equinox-AI solves this by simulating a **complete hedge fund stack in software**
 ## 🏗️ System Architecture
 
 Equinox-AI uses a **decoupled, event-driven architecture** so the Trading Engine never blocks the Research Engine.
+
 ```mermaid
 graph TD
     User["User Terminal"] --> UI["Gradio Unified Dashboard"]
@@ -72,8 +73,6 @@ graph TD
     end
 
     Risk --> Alerts["Pushover Alerts"]
-
-
 🧠 The Dual-Core Engine
 🔸 Core A: Trading Floor (Execution Layer)
 Agent	Model	Strategy	Risk
@@ -208,6 +207,3 @@ MIT License
 This software is for educational and research purposes only.
 Financial trading involves significant risk.
 The authors assume no liability for financial losses.
-
-
-
