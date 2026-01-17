@@ -42,7 +42,7 @@ Equinox-AI solves this by simulating a **complete hedge fund stack in software**
 ## 🏗️ System Architecture
 
 Equinox-AI uses a **decoupled, event-driven architecture** so the Trading Engine never blocks the Research Engine.
-
+```mermaid
 graph TD
     User["User Terminal"] --> UI["Gradio Unified Dashboard"]
 
