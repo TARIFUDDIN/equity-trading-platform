@@ -137,76 +137,76 @@ A research-focused intelligence engine responsible for financial analysis, advis
 
 ### Clone Repository
 ```bash
-git clone https://github.com/your-username/equinox-ai.git
-cd equinox-ai
-Install Dependencies
-bash
-Copy code
-uv sync
+-git clone https://github.com/your-username/equinox-ai.git
+-cd equinox-ai
+-Install Dependencies
+-bash
+-Copy code
+-uv sync
 # OR
-pip install -r requirements.txt
-Build Knowledge Base (RAG)
-bash
-Copy code
-python finance_chat/rag/build_kb.py
-Configuration Guide
-Create a .env file in the root directory:
+-pip install -r requirements.txt
+-Build Knowledge Base (RAG)
+-bash
+-Copy code
+-python finance_chat/rag/build_kb.py
+-Configuration Guide
+-Create a .env file in the root directory:
+---
+## env 
+-Copy code
+-OPENAI_API_KEY=sk-xxxx
+-GOOGLE_API_KEY=AIza-xxxx
 
-### env 
-Copy code
-OPENAI_API_KEY=sk-xxxx
-GOOGLE_API_KEY=AIza-xxxx
+-POLYGON_API_KEY=xxxx
+-ALPHA_VANTAGE_API_KEY=xxxx
 
-POLYGON_API_KEY=xxxx
-ALPHA_VANTAGE_API_KEY=xxxx
+-PUSHOVER_USER_KEY=xxxx
+-PUSHOVER_API_TOKEN=xxxx
 
-PUSHOVER_USER_KEY=xxxx
-PUSHOVER_API_TOKEN=xxxx
+-RUN_EVERY_N_MINUTES=5
+-RISK_VAR_LIMIT=0.03
+-Risk Management Protocols
+-VaR Circuit Breaker
+-Stops buying when daily VaR exceeds 3%.
+---
+## Sentiment Filter
+-Rejects buy orders if news sentiment falls below -0.2.
 
-RUN_EVERY_N_MINUTES=5
-RISK_VAR_LIMIT=0.03
-Risk Management Protocols
-VaR Circuit Breaker
-Stops buying when daily VaR exceeds 3%.
+-Drawdown Hard Stop
+-Auto-liquidates positions if portfolio drawdown exceeds 5%.
 
-### Sentiment Filter
-Rejects buy orders if news sentiment falls below -0.2.
+-Performance Metrics
+-Latency: <200ms
 
-Drawdown Hard Stop
-Auto-liquidates positions if portfolio drawdown exceeds 5%.
+-Drawdown reduction: ~30%
 
-Performance Metrics
-Latency: <200ms
+-Signal accuracy improvement: ~20%
 
-Drawdown reduction: ~30%
+-API cost savings: ~40%
+---
+## Roadmap
+-Core Trading Engine
 
-Signal accuracy improvement: ~20%
+-RAG Financial Analyst
 
-API cost savings: ~40%
+-Unified Dashboard
 
-### Roadmap
-Core Trading Engine
+-Crypto Support (Binance / Coinbase)❌
 
-RAG Financial Analyst
-
-Unified Dashboard
-
-Crypto Support (Binance / Coinbase)
-
-Mobile App (React Native)
-
+-Mobile App (React Native)❌
+---
 ###Contributing
-bash
-Copy code
-git checkout -b feature/AmazingStrategy
-git commit -m "Add Mean Reversion Strategy"
-git push origin feature/AmazingStrategy
-Open a Pull Request.
-
+-bash
+-Copy code
+-git checkout -b feature/AmazingStrategy
+-git commit -m "Add Mean Reversion Strategy"
+-git push origin feature/AmazingStrategy
+-Open a Pull Request.
+---
 ### Disclaimer & License
-MIT License
+####MIT License
 
-WARNING
-This software is for educational and research purposes only.
-Financial trading involves significant risk.
-The authors assume no liability for financial losses.
+####WARNING
+-This software is for educational and research purposes only.
+-Financial trading involves significant risk.
+-The authors assume no liability for financial losses.
