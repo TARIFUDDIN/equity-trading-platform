@@ -152,7 +152,7 @@ python finance_chat/rag/build_kb.py
 Configuration Guide
 Create a .env file in the root directory:
 
-env
+### env 
 Copy code
 OPENAI_API_KEY=sk-xxxx
 GOOGLE_API_KEY=AIza-xxxx
@@ -169,7 +169,7 @@ Risk Management Protocols
 VaR Circuit Breaker
 Stops buying when daily VaR exceeds 3%.
 
-Sentiment Filter
+### Sentiment Filter
 Rejects buy orders if news sentiment falls below -0.2.
 
 Drawdown Hard Stop
@@ -184,7 +184,7 @@ Signal accuracy improvement: ~20%
 
 API cost savings: ~40%
 
-Roadmap
+### Roadmap
 Core Trading Engine
 
 RAG Financial Analyst
@@ -195,7 +195,7 @@ Crypto Support (Binance / Coinbase)
 
 Mobile App (React Native)
 
-Contributing
+###Contributing
 bash
 Copy code
 git checkout -b feature/AmazingStrategy
@@ -203,7 +203,7 @@ git commit -m "Add Mean Reversion Strategy"
 git push origin feature/AmazingStrategy
 Open a Pull Request.
 
-Disclaimer & License
+### Disclaimer & License
 MIT License
 
 WARNING
