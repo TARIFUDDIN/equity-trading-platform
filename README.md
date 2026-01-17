@@ -43,37 +43,36 @@ Equinox-AI solves this by simulating a **complete hedge fund stack in software**
 
 Equinox-AI uses a **decoupled, event-driven architecture** so the Trading Engine never blocks the Research Engine.
 
-```mermaid
 graph TD
-    User[User Terminal] --> UI[Gradio Unified Dashboard]
+    User["User Terminal"] --> UI["Gradio Unified Dashboard"]
 
-    subgraph CORE_1["CORE 1: EXECUTION ENGINE (Async Loop)"]
-        UI --> TradingFloor[Trading Floor Orchestrator]
-        TradingFloor --> Agents[Agent Committee]
+    subgraph CORE1["CORE 1: EXECUTION ENGINE (Async Loop)"]
+        UI --> TradingFloor["Trading Floor Orchestrator"]
+        TradingFloor --> Agents["Agent Committee"]
 
-        Agents --> Warren[Claude-3-Opus]
-        Agents --> George[Gemini-Pro]
-        Agents --> Cathie[GPT-4]
+        Agents --> Warren["Claude-3-Opus (Warren)"]
+        Agents --> George["Gemini-Pro (George)"]
+        Agents --> Cathie["GPT-4 (Cathie)"]
 
-        Agents --> MCP[Model Context Protocol]
-        MCP --> Market[Polygon.io]
-        MCP --> Portfolio[SQLite Ledger]
-        MCP --> Risk[VaR & Drawdown Guardrails]
+        Agents --> MCP["Model Context Protocol"]
+        MCP --> Polygon["Polygon.io API"]
+        MCP --> Portfolio["SQLite Ledger"]
+        MCP --> Risk["VaR & Drawdown Guard"]
     end
 
-    subgraph CORE_2["CORE 2: INTELLIGENCE ENGINE (LangGraph)"]
-        UI --> Chatbot[Analyst Chatbot]
-        Chatbot --> Router[Intent Classifier]
+    subgraph CORE2["CORE 2: INTELLIGENCE ENGINE (LangGraph)"]
+        UI --> Chatbot["Analyst Chatbot"]
+        Chatbot --> Router{"Intent Router"}
 
-        Router --> Sentiment[Sentiment Engine]
-        Sentiment --> News[Finviz / MarketWatch]
+        Router --> Sentiment["Sentiment Engine"]
+        Sentiment --> News["Finviz / MarketWatch"]
 
-        Router --> MF[Mutual Fund Scraper]
-        Router --> RAG[RAG Pipeline]
-        RAG --> VectorDB[ChromaDB]
+        Router --> RAG["RAG Pipeline"]
+        RAG --> VectorDB["ChromaDB"]
     end
 
-    Risk --> Alerts[Pushover Notifications]
+    Risk --> Alerts["Pushover Alerts"]
+
 
 🧠 The Dual-Core Engine
 🔸 Core A: Trading Floor (Execution Layer)
