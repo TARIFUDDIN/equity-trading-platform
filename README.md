@@ -139,52 +139,50 @@ A research-focused intelligence engine responsible for financial analysis, advis
 
 git clone https://github.com/your-username/equinox-ai.git
 cd equinox-ai
-### 2. Install Dependencies
+## 📦 Install Dependencies
 
-Choose one of the following methods:
-
-#### Recommended
-```bash
+### ✅ Recommended
 uv sync
-OR
+🔁 OR
 bash
 Copy code
 pip install -r requirements.txt
-3. Build Knowledge Base (RAG)
+
+🧠 Build Knowledge Base (RAG)
 bash
 Copy code
 python finance_chat/rag/build_kb.py
-Configuration Guide
+⚙️ Configuration Guide
 Create a .env file in the root directory:
 
 env
 Copy code
-# AI PROVIDERS
+#### AI PROVIDERS
 OPENAI_API_KEY=sk-xxxx
 GOOGLE_API_KEY=AIza-xxxx
 
-# MARKET DATA
+#### MARKET DATA
 POLYGON_API_KEY=xxxx
 ALPHA_VANTAGE_API_KEY=xxxx
 
-# NOTIFICATIONS
+#### NOTIFICATIONS
 PUSHOVER_USER_KEY=xxxx
 PUSHOVER_API_TOKEN=xxxx
 
-# SYSTEM
+#### SYSTEM
 RUN_EVERY_N_MINUTES=5
 RISK_VAR_LIMIT=0.03
-Risk Management Protocols
-VaR Circuit Breaker
+🛡️ Risk Management Protocols
+🔒 VaR Circuit Breaker
 Stops all buy orders when daily Value-at-Risk (VaR) exceeds 3%.
 
-Sentiment Filter
+📰 Sentiment Filter
 Rejects buy orders when news sentiment falls below -0.2.
 
-Drawdown Hard Stop
+🧨 Drawdown Hard Stop
 Automatically liquidates positions if portfolio drawdown exceeds 5%.
 
-Performance Metrics
+## 📊 Performance Metrics
 Latency: < 200ms
 
 Drawdown Reduction: ~30%
@@ -193,7 +191,7 @@ Signal Accuracy Improvement: ~20%
 
 API Cost Savings: ~40%
 
-Roadmap
+## 🛣️ Roadmap
 Core Trading Engine
 
 RAG Financial Analyst
@@ -204,17 +202,18 @@ Crypto Support (Binance / Coinbase) ❌
 
 Mobile App (React Native) ❌
 
-Contributing
+## 🤝 Contributing
 bash
 Copy code
 git checkout -b feature/AmazingStrategy
 git commit -m "Add Mean Reversion Strategy"
 git push origin feature/AmazingStrategy
-Open a Pull Request.
+Open a Pull Request 🚀
 
-Disclaimer & License
+📄 Disclaimer & License
 MIT License
-WARNING
+
+⚠️ WARNING
 This software is for educational and research purposes only.
 Financial trading involves significant risk.
-The authors assume no liability for financial losses.
+The authors assume no liability for financial losses
