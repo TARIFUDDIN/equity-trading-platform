@@ -157,32 +157,32 @@ Create a .env file in the root directory:
 
 env
 Copy code
-# AI PROVIDERS
+### AI PROVIDERS
 OPENAI_API_KEY=sk-xxxx
 GOOGLE_API_KEY=AIza-xxxx
 
-# MARKET DATA
+### MARKET DATA
 POLYGON_API_KEY=xxxx
 ALPHA_VANTAGE_API_KEY=xxxx
 
-# NOTIFICATIONS
+### NOTIFICATIONS
 PUSHOVER_USER_KEY=xxxx
 PUSHOVER_API_TOKEN=xxxx
 
-# SYSTEM
+### SYSTEM
 RUN_EVERY_N_MINUTES=5
 RISK_VAR_LIMIT=0.03
 Risk Management Protocols
 VaR Circuit Breaker
 Stops all buy orders when daily Value-at-Risk (VaR) exceeds 3%.
----
+
 ### Sentiment Filter
 Rejects buy orders when news sentiment falls below -0.2.
 
 ### Drawdown Hard Stop
 Automatically liquidates positions if portfolio drawdown exceeds 5%.
 
-### Performance Metrics
+ Performance Metrics
 Latency: < 200ms
 
 Drawdown Reduction: ~30%
