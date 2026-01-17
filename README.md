@@ -58,21 +58,23 @@ graph TD
         Agents --> MCP["Model Context Protocol"]
         MCP --> Polygon["Polygon.io API"]
         MCP --> Portfolio["SQLite Ledger"]
-        MCP --> Risk["VaR & Drawdown Guard"]
+        MCP --> Risk["VaR and Drawdown Guard"]
     end
 
     subgraph CORE2["CORE 2: INTELLIGENCE ENGINE (LangGraph)"]
         UI --> Chatbot["Analyst Chatbot"]
-        Chatbot --> Router{"Intent Router"}
+        Chatbot --> Router["Intent Router"]
 
         Router --> Sentiment["Sentiment Engine"]
-        Sentiment --> News["Finviz / MarketWatch"]
+        Sentiment --> News["Market News"]
 
         Router --> RAG["RAG Pipeline"]
         RAG --> VectorDB["ChromaDB"]
     end
 
     Risk --> Alerts["Pushover Alerts"]
+```
+
 🧠 The Dual-Core Engine
 🔸 Core A: Trading Floor (Execution Layer)
 Agent	Model	Strategy	Risk
