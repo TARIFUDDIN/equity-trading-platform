@@ -2,133 +2,130 @@
 ### The Autonomous Financial Singularity  
 **Where Quantitative Execution Meets Generative Reasoning**
 
-Equinox-AI is **not just a trading bot**.  
-It is a **dual-core financial operating system** that merges a committee of autonomous trading agents with a deep-research financial analyst — all unified under a single **institutional-grade dashboard**.
+Equinox-AI is not just a trading bot.  
+It is a **dual-core financial operating system** that merges autonomous trading agents with a deep-research financial analyst, unified under a single **institutional-grade terminal**.
 
 ---
 
 ## 📑 Table of Contents
-- 🦅 Executive Summary  
-- 🏗️ System Architecture  
-- 🧠 The Dual-Core Engine  
-  - Core A: The Trading Floor  
-  - Core B: The Intelligence Hub  
-- 🛠️ Technical Stack & Dependencies  
-- ⚡ Installation & Setup  
-- ⚙️ Configuration Guide  
-- 🛡️ Risk Management Protocols  
-- 📊 Performance Metrics  
-- 🛣️ Roadmap  
-- 🤝 Contributing  
-- ⚖️ Disclaimer & License  
+- [Executive Summary](#-executive-summary)
+- [System Architecture](#️-system-architecture)
+- [The Dual-Core Engine](#-the-dual-core-engine)
+- [Technical Stack](#️-technical-stack--dependencies)
+- [Installation & Setup](#-installation--setup)
+- [Configuration Guide](#️-configuration-guide)
+- [Risk Management Protocols](#️-risk-management-protocols)
+- [Performance Metrics](#-performance-metrics)
+- [Roadmap](#-roadmap)
+- [Contributing](#-contributing)
+- [Disclaimer & License](#️-disclaimer--license)
 
 ---
 
 ## 🦅 Executive Summary
 
-In the modern financial landscape, **data is abundant but insight is scarce**.
+Modern markets suffer from **information overload but insight scarcity**.  
+Equinox-AI solves this by simulating a **complete hedge fund stack in software**.
 
-**Equinox-AI** solves this by simulating a complete **hedge-fund-grade structure in software**:
+### 🔹 Key Capabilities
+- **Autonomous Execution**  
+  A committee of 4 AI traders (Warren, George, Ray, Cathie) debate, decide, and execute trades independently using the **Model Context Protocol (MCP)**.
 
-### 🔁 Autonomous Execution
-A committee of **4 distinct AI personalities** — *Warren, George, Ray, Cathie* — independently debate strategy and execute trades using the **Model Context Protocol (MCP)**.
+- **Deep Financial Research**  
+  A LangGraph-powered analyst uses **Retrieval Augmented Generation (RAG)** to answer complex questions using verified internal PDFs — not hallucinations.
 
-### 🧠 Deep Research Intelligence
-A dedicated **Analyst Chatbot** uses **Retrieval-Augmented Generation (RAG)** to answer complex financial queries by citing **verified internal documents (PDFs)** — eliminating hallucinated advice.
-
-### 📰 Real-Time Market Awareness
-Equinox actively *reads the news*.  
-A built-in scraping engine analyzes sentiment from **Finviz** and **MarketWatch** to filter false breakouts and noisy signals.
+- **Live Market Intelligence**  
+  Integrated web scrapers analyze **Finviz & MarketWatch** sentiment to filter false signals in real time.
 
 ---
 
 ## 🏗️ System Architecture
 
-Equinox-AI uses a **decoupled, event-driven architecture** to ensure the **Trading Engine never blocks the Research Engine**.
+Equinox-AI uses a **decoupled, event-driven architecture** so the Trading Engine never blocks the Research Engine.
 
 ```mermaid
 graph TD
-    User[User Terminal] -->|Interacts| UI[Gradio Unified Dashboard]
+    User[User Terminal] --> UI[Gradio Unified Dashboard]
 
-    subgraph "CORE 1: EXECUTION ENGINE (Async Loop)"
+    subgraph CORE_1["CORE 1: EXECUTION ENGINE (Async Loop)"]
         UI --> TradingFloor[Trading Floor Orchestrator]
         TradingFloor --> Agents[Agent Committee]
 
-        Agents -->|Warren| Claude[Claude-3-Opus]
-        Agents -->|George| Gemini[Gemini-Pro]
-        Agents -->|Cathie| GPT4[GPT-4]
+        Agents --> Warren[Claude-3-Opus]
+        Agents --> George[Gemini-Pro]
+        Agents --> Cathie[GPT-4]
 
         Agents --> MCP[Model Context Protocol]
-        MCP --> Polygon[Polygon.io API]
+        MCP --> Market[Polygon.io]
         MCP --> Portfolio[SQLite Ledger]
-        MCP --> Risk[VaR & Drawdown Circuit Breaker]
+        MCP --> Risk[VaR & Drawdown Guardrails]
     end
 
-    subgraph "CORE 2: INTELLIGENCE ENGINE (LangGraph)"
+    subgraph CORE_2["CORE 2: INTELLIGENCE ENGINE (LangGraph)"]
         UI --> Chatbot[Analyst Chatbot]
-        Chatbot --> Router{Intent Classifier}
+        Chatbot --> Router[Intent Classifier]
 
-        Router -->|Stock News| Sentiment[Sentiment Engine]
-        Sentiment --> Web[Finviz / MarketWatch]
+        Router --> Sentiment[Sentiment Engine]
+        Sentiment --> News[Finviz / MarketWatch]
 
-        Router -->|Mutual Funds| MF[MF Scraper]
-        MF --> TickerTape[TickerTape Data]
-
-        Router -->|Advisory| RAG[RAG Pipeline]
+        Router --> MF[Mutual Fund Scraper]
+        Router --> RAG[RAG Pipeline]
         RAG --> VectorDB[ChromaDB]
-        VectorDB --> Embeddings[OpenAI / Gemini Embeddings]
     end
 
-    Risk -->|Alerts| Pushover[Mobile Notifications]
+    Risk --> Alerts[Pushover Notifications]
 🧠 The Dual-Core Engine
-🔥 Core A: The Trading Floor (Execution Layer)
-Agent	Model	Trading Style	Risk Profile
-Warren (The Sage)	Claude-3-Opus	Value investing, low P/E, strong moats	Low
-George (The Soros)	Gemini-Pro	Momentum, reflexivity, news-driven	High
-Ray (The Quant)	Mistral-Large	Systematic, RSI, MACD, Bollinger Bands	Medium
-Cathie (The Disruptor)	GPT-4	High-beta growth, tech breakouts	Very High
+🔸 Core A: Trading Floor (Execution Layer)
+Agent	Model	Strategy	Risk
+Warren	Claude-3-Opus	Value investing, fundamentals	Low
+George	Gemini-Pro	Momentum & news reflexivity	High
+Ray	Mistral-Large	Quant indicators (RSI, MACD)	Medium
+Cathie	GPT-4	High-beta growth & innovation	Very High
 
-Agents operate independently to avoid groupthink.
+🔸 Core B: Intelligence Hub (Research Layer)
+Intent Routing (stock / fund / advisory)
 
-🧠 Core B: The Intelligence Hub (Research Layer)
-A LangGraph-powered financial analyst with context awareness.
+Live NAV & AUM scraping
 
-Smart Routing
-Classifies queries (stock, mutual_fund, general_finance) and routes them to specialized sub-agents.
+PDF-based RAG citations
 
-Live Fund Analysis
-Ask: “Compare HDFC Flexi Cap vs Parag Parikh”
-→ Scrapes live NAV, AUM, and returns into a table.
+Sentiment-aware analysis
 
-Document-Aware Chat (RAG)
-Upload strategy PDFs and ask: “What is our hedging protocol?”
-→ Answers are cited from your documents.
+Example queries:
+
+“Compare HDFC Flexi Cap vs Parag Parikh”
+
+“What is our hedging strategy?”
+
+“Explain sentiment on Reliance”
 
 🛠️ Technical Stack & Dependencies
 Backend & AI
 Python 3.10+
 
-LangGraph – Stateful multi-step agent reasoning
+LangGraph
 
-OpenAI SDK – GPT-4 & embeddings
+OpenAI SDK (GPT-4 + embeddings)
 
-Google Gemini – Fast, low-cost reasoning
+Google Gemini
 
-ChromaDB – Local vector database (no cloud lock-in)
+ChromaDB (local vector store)
 
 Data & Connectivity
-Polygon.io – Institutional market data
+Polygon.io (market data)
 
-WebSockets – Sub-200ms updates
+Alpha Vantage (backup)
 
-BeautifulSoup4 – News & MF scraping
+WebSockets (sub-200ms updates)
 
-Pushover – Real-time mobile alerts
+BeautifulSoup4 (scraping)
+
+Pushover (alerts)
 
 Frontend
-Gradio 5.0 – Zero-JS reactive dashboard
+Gradio 5.0
 
-Plotly – Interactive financial charts
+Plotly (interactive charts)
 
 ⚡ Installation & Setup
 1️⃣ Clone Repository
@@ -144,73 +141,61 @@ uv sync
 
 # OR
 pip install -r requirements.txt
-3️⃣ Build Intelligence Knowledge Base (RAG)
-Place PDFs into:
-
-bash
-Copy code
-finance_chat/rag/finance_pdfs/
-Run:
-
+3️⃣ Build Knowledge Base (RAG)
 bash
 Copy code
 python finance_chat/rag/build_kb.py
 ⚙️ Configuration Guide
-Create a .env file in the root directory:
+Create a .env file in root:
 
-ini
+env
 Copy code
-# --- AI PROVIDERS ---
-OPENAI_API_KEY="sk-..."
-GOOGLE_API_KEY="AIza..."
+# AI PROVIDERS
+OPENAI_API_KEY=sk-xxxx
+GOOGLE_API_KEY=AIza-xxxx
 
-# --- MARKET DATA ---
-POLYGON_API_KEY="..."
-ALPHA_VANTAGE_API_KEY="..."
+# MARKET DATA
+POLYGON_API_KEY=xxxx
+ALPHA_VANTAGE_API_KEY=xxxx
 
-# --- NOTIFICATIONS ---
-PUSHOVER_USER_KEY="..."
-PUSHOVER_API_TOKEN="..."
+# NOTIFICATIONS
+PUSHOVER_USER_KEY=xxxx
+PUSHOVER_API_TOKEN=xxxx
 
-# --- SYSTEM ---
+# SYSTEM
 RUN_EVERY_N_MINUTES=5
 RISK_VAR_LIMIT=0.03
 🛡️ Risk Management Protocols
-Capital preservation is non-negotiable.
-
 VaR Circuit Breaker
-If daily VaR > 3% → All buy orders halted.
+Stops buying if daily VaR exceeds 3%
 
 Sentiment Filter
-Negative sentiment (< -0.2) blocks buys regardless of technicals.
+Rejects buys when news sentiment < -0.2
 
 Drawdown Hard Stop
-
-5% intraday loss → Auto-liquidation to cash.
+Auto-liquidates if portfolio drops >5%
 
 📊 Performance Metrics
-Latency: <200ms real-time updates
+⚡ Latency: <200ms
 
-Drawdown: ↓ 30% during backtests
+📉 Drawdown Reduction: ~30%
 
-Signal Accuracy: ↑ ~20% via sentiment filtering
+🎯 Signal Accuracy: +20%
 
-Efficiency: 40% fewer API calls (~$50/month saved)
+💸 API Cost Savings: 40%
 
 🛣️ Roadmap
  Core Trading Engine
 
- RAG-powered Analyst
+ RAG Financial Analyst
 
- Unified Terminal UI
+ Unified Dashboard
 
  Crypto Support (Binance / Coinbase)
 
  Mobile App (React Native)
 
 🤝 Contributing
-We welcome quant developers, AI researchers, and frontend engineers.
-
 bash
 Copy code
 git checkout -b feature/AmazingStrategy
@@ -223,5 +208,5 @@ MIT License
 
 ⚠️ WARNING
 This software is for educational and research purposes only.
-Financial trading involves substantial risk.
-The authors provide no warranty and assume no liability for losses.
+Financial trading involves significant risk.
+The authors assume no liability for financial losses.
