@@ -136,10 +136,11 @@ A research-focused intelligence engine responsible for financial analysis, advis
 ## Installation & Setup
 
 ### 1. Clone the Repository
-```bash
+
 git clone https://github.com/your-username/equinox-ai.git
 cd equinox-ai
-2. Install Dependencies
+
+### 2. Install Dependencies
 bash
 Copy code
 # Recommended
@@ -174,14 +175,14 @@ RISK_VAR_LIMIT=0.03
 Risk Management Protocols
 VaR Circuit Breaker
 Stops all buy orders when daily Value-at-Risk (VaR) exceeds 3%.
-
-Sentiment Filter
+---
+### Sentiment Filter
 Rejects buy orders when news sentiment falls below -0.2.
 
-Drawdown Hard Stop
+### Drawdown Hard Stop
 Automatically liquidates positions if portfolio drawdown exceeds 5%.
 
-Performance Metrics
+### Performance Metrics
 Latency: < 200ms
 
 Drawdown Reduction: ~30%
@@ -190,7 +191,7 @@ Signal Accuracy Improvement: ~20%
 
 API Cost Savings: ~40%
 
-Roadmap
+### Roadmap
 Core Trading Engine
 
 RAG Financial Analyst
@@ -201,7 +202,7 @@ Crypto Support (Binance / Coinbase) ❌
 
 Mobile App (React Native) ❌
 
-Contributing
+### Contributing
 bash
 Copy code
 git checkout -b feature/AmazingStrategy
@@ -209,7 +210,7 @@ git commit -m "Add Mean Reversion Strategy"
 git push origin feature/AmazingStrategy
 Open a Pull Request 🚀
 
-Disclaimer & License
+## Disclaimer & License
 MIT License
 WARNING
 This software is for educational and research purposes only.
