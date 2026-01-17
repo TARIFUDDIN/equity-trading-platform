@@ -143,10 +143,10 @@ cd equinox-ai
 ### 2. Install Dependencies
 bash
 Copy code
-# Recommended
+#### Recommended
 uv sync
 
-# OR
+#### OR
 pip install -r requirements.txt
 3. Build Knowledge Base (RAG)
 bash
@@ -157,19 +157,19 @@ Create a .env file in the root directory:
 
 env
 Copy code
-### AI PROVIDERS
+#### AI PROVIDERS
 OPENAI_API_KEY=sk-xxxx
 GOOGLE_API_KEY=AIza-xxxx
 
-### MARKET DATA
+#### MARKET DATA
 POLYGON_API_KEY=xxxx
 ALPHA_VANTAGE_API_KEY=xxxx
 
-### NOTIFICATIONS
+#### NOTIFICATIONS
 PUSHOVER_USER_KEY=xxxx
 PUSHOVER_API_TOKEN=xxxx
 
-### SYSTEM
+#### SYSTEM
 RUN_EVERY_N_MINUTES=5
 RISK_VAR_LIMIT=0.03
 Risk Management Protocols
@@ -191,7 +191,7 @@ Signal Accuracy Improvement: ~20%
 
 API Cost Savings: ~40%
 
-### Roadmap
+#### Roadmap
 Core Trading Engine
 
 RAG Financial Analyst
@@ -202,7 +202,7 @@ Crypto Support (Binance / Coinbase) ❌
 
 Mobile App (React Native) ❌
 
-### Contributing
+#### Contributing
 bash
 Copy code
 git checkout -b feature/AmazingStrategy
