@@ -1,47 +1,54 @@
-# 🌌 EQUINOX-AI  
-### The Autonomous Financial Singularity  
-**Where Quantitative Execution Meets Generative Reasoning**
+<div align="center">
+  <h1>🌌</h1>
+  <h1>SYNAPSE-FINANCE</h1>
+  <p>
+    <strong>The Autonomous Financial Singularity</strong>
+  </p>
+</div>
 
-Equinox-AI is not just a trading bot.  
-It is a **dual-core financial operating system** that merges autonomous trading agents with a deep-research financial analyst, unified under a single **institutional-grade terminal**.
+![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg?style=for-the-badge)
+![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg?style=for-the-badge&logo=python&logoColor=white)
+![AI](https://img.shields.io/badge/Intelligence-OpenAI%20%2F%20Gemini-purple.svg?style=for-the-badge&logo=openai&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=for-the-badge)
+
+> **"Where Quantitative Execution Meets Generative Reasoning."**
+>
+> Synapse-Finance is not just a trading bot. It is a **dual-core financial operating system** that merges autonomous trading agents with a deep-research financial analyst, unified under a single **institutional-grade terminal**.
 
 ---
 
 ## 📑 Table of Contents
-- [Executive Summary](#-executive-summary)
-- [System Architecture](#️-system-architecture)
-- [The Dual-Core Engine](#-the-dual-core-engine)
-- [Technical Stack](#️-technical-stack--dependencies)
-- [Installation & Setup](#-installation--setup)
-- [Configuration Guide](#️-configuration-guide)
-- [Risk Management Protocols](#️-risk-management-protocols)
-- [Performance Metrics](#-performance-metrics)
-- [Roadmap](#-roadmap)
-- [Contributing](#-contributing)
-- [Disclaimer & License](#️-disclaimer--license)
+- [🦅 Executive Summary](#-executive-summary)
+- [🏗️ System Architecture](#-system-architecture)
+- [🧠 The Dual-Core Engine](#-the-dual-core-engine)
+- [🛠️ Technical Stack](#-technical-stack--dependencies)
+- [⚡ Installation & Setup](#-installation--setup)
+- [⚙️ Configuration Guide](#-configuration-guide)
+- [🛡️ Risk Management Protocols](#-risk-management-protocols)
+- [📊 Performance Metrics](#-performance-metrics)
+- [🛣️ Roadmap](#-roadmap)
+- [🤝 Contributing](#-contributing)
+- [⚖️ Disclaimer & License](#-disclaimer--license)
 
 ---
 
 ## 🦅 Executive Summary
 
-Modern markets suffer from **information overload but insight scarcity**.  
-Equinox-AI solves this by simulating a **complete hedge fund stack in software**.
+Modern markets suffer from **information overload but insight scarcity**. Synapse-Finance solves this by simulating a **complete hedge fund stack in software**.
 
 ### 🔹 Key Capabilities
-- **Autonomous Execution**  
-  A committee of 4 AI traders (Warren, George, Ray, Cathie) debate, decide, and execute trades independently using the **Model Context Protocol (MCP)**.
+- **Autonomous Execution** A committee of 4 AI traders (Warren, George, Ray, Cathie) debate, decide, and execute trades independently using the **Model Context Protocol (MCP)**.
 
-- **Deep Financial Research**  
-  A LangGraph-powered analyst uses **Retrieval Augmented Generation (RAG)** to answer complex questions using verified internal PDFs — not hallucinations.
+- **Deep Financial Research** A LangGraph-powered analyst uses **Retrieval Augmented Generation (RAG)** to answer complex questions using verified internal PDFs — not hallucinations.
 
-- **Live Market Intelligence**  
-  Integrated web scrapers analyze **Finviz & MarketWatch** sentiment to filter false signals in real time.
+- **Live Market Intelligence** Integrated web scrapers analyze **Finviz & MarketWatch** sentiment to filter false signals in real time.
 
 ---
 
 ## 🏗️ System Architecture
 
-Equinox-AI uses a **decoupled, event-driven architecture** so the Trading Engine never blocks the Research Engine.
+Synapse uses a **decoupled, event-driven architecture** so the Trading Engine never blocks the Research Engine.
 
 ```mermaid
 graph TD
