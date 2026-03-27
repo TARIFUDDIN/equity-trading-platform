@@ -99,6 +99,120 @@ A committee of autonomous trading agents, each operating with a distinct market 
 | Ray    | Mistral-Large    | Quant indicators (RSI, MACD)                | Medium    |
 | Cathie | GPT-4            | High-beta growth and innovation strategies  | Very High |
 
+### Core A: Mathematical Algos:
+def calculate_rsi(prices, period=14):
+    """Calculate RSI indicator"""
+    if len(prices) < period:
+        return [50] * len(prices)
+    
+    prices = np.array(prices)
+    deltas = np.diff(prices)
+    seed = deltas[:period+1]
+    up = seed[seed >= 0].sum() / period
+    down = -seed[seed < 0].sum() / period
+    rs = up / down if down != 0 else 100
+    rsi = np.zeros_like(prices)
+    rsi[:period] = 100. - 100. / (1. + rs)
+
+    for i in range(period, len(prices)):
+        delta = deltas[i-1]
+        if delta > 0:
+            upval = delta
+            downval = 0.
+        else:
+            upval = 0.
+            downval = -delta
+
+        up = (up * (period - 1) + upval) / period
+        down = (down * (period - 1) + downval) / period
+        rs = up / down if down != 0 else 100
+        rsi[i] = 100. - 100. / (1. + rs)
+
+    return rsi.tolist()
+
+def calculate_macd(prices, fast=12, slow=26, signal=9):
+    """Calculate MACD indicator"""
+    if len(prices) < slow:
+        return [0] * len(prices), [0] * len(prices), [0] * len(prices)
+    
+    prices = pd.Series(prices)
+    ema_fast = prices.ewm(span=fast).mean()
+    ema_slow = prices.ewm(span=slow).mean()
+    macd_line = ema_fast - ema_slow
+    signal_line = macd_line.ewm(span=signal).mean()
+    histogram = macd_line - signal_line
+    
+    return macd_line.tolist(), signal_line.tolist(), histogram.tolist()
+
+def calculate_bollinger_bands(prices, period=20, std_dev=2):
+    """Calculate Bollinger Bands"""
+    if len(prices) < period:
+        return prices, prices, prices
+    
+    prices = pd.Series(prices)
+    sma = prices.rolling(window=period).mean()
+    std = prices.rolling(window=period).std()
+    
+    upper_band = sma + (std * std_dev)
+    lower_band = sma - (std * std_dev)
+    
+    return upper_band.bfill().tolist(), sma.bfill().tolist(), lower_band.bfill().tolist()
+
+def get_technical_signals(symbol):
+    """Get technical analysis signals for a symbol"""
+    try:
+        days = 50
+        base_price = random.uniform(50, 200)
+        prices = []
+        
+        for i in range(days):
+            change = random.uniform(-0.05, 0.05)
+            trend = 0.001 if i > 25 else -0.001
+            base_price *= (1 + change + trend)
+            prices.append(max(10, base_price))
+        
+        rsi = calculate_rsi(prices)
+        macd, macd_signal, macd_hist = calculate_macd(prices)
+        bb_upper, bb_middle, bb_lower = calculate_bollinger_bands(prices)
+        
+        current_rsi = rsi[-1]
+        current_macd = macd[-1]
+        current_price = prices[-1]
+        
+        signals = []
+        
+        if current_rsi > 70:
+            signals.append({"type": "RSI", "signal": "OVERBOUGHT", "value": current_rsi, "color": "#FF6B6B"})
+        elif current_rsi < 30:
+            signals.append({"type": "RSI", "signal": "OVERSOLD", "value": current_rsi, "color": "#00FF88"})
+        else:
+            signals.append({"type": "RSI", "signal": "NEUTRAL", "value": current_rsi, "color": "#FFD93D"})
+        
+        if current_macd > 0:
+            signals.append({"type": "MACD", "signal": "BULLISH", "value": current_macd, "color": "#00FF88"})
+        else:
+            signals.append({"type": "MACD", "signal": "BEARISH", "value": current_macd, "color": "#FF6B6B"})
+        
+        if current_price > bb_upper[-1]:
+            signals.append({"type": "BB", "signal": "OVERBOUGHT", "value": current_price, "color": "#FF6B6B"})
+        elif current_price < bb_lower[-1]:
+            signals.append({"type": "BB", "signal": "OVERSOLD", "value": current_price, "color": "#00FF88"})
+        else:
+            signals.append({"type": "BB", "signal": "NORMAL", "value": current_price, "color": "#00D2FF"})
+        
+        return {
+            "symbol": symbol,
+            "signals": signals,
+            "rsi": current_rsi,
+            "macd": current_macd,
+            "price": current_price,
+            "timestamp": datetime.now().isoformat()
+        }
+        
+    except Exception as e:
+        return {"symbol": symbol, "signals": [], "error": str(e)}
+
+
 ---
 
 ### Core B: Intelligence Hub (Research Layer)
